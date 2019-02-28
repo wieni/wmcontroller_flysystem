@@ -34,8 +34,8 @@ class ContentStorage
 
         return new Cache(
             $cache->getId(),
-            $cache->getMethod(),
             $cache->getUri(),
+            $cache->getMethod(),
             $path,
             $cache->getHeaders(),
             $cache->getExpiry()
@@ -56,8 +56,8 @@ class ContentStorage
 
         return new Cache(
             $cache->getId(),
-            $cache->getMethod(),
             $cache->getUri(),
+            $cache->getMethod(),
             $body,
             $cache->getHeaders(),
             $cache->getExpiry()
