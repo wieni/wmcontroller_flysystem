@@ -7,19 +7,20 @@ use League\Flysystem\FilesystemInterface;
 
 class ContentStorage
 {
-    /** @var \League\Flysystem\FilesystemInterface */
+    /** @var FilesystemInterface */
     protected $fs;
+    /** @var string */
     protected $directory;
 
     public function __construct(
         FilesystemInterface $fs,
-        $directory
+        string $directory
     ) {
         $this->fs = $fs;
         $this->directory = trim($directory, "\\/ \t\n\r\0\x0B") . '/';
     }
 
-    public function storeBodyOnFileSystem(Cache $cache)
+    public function storeBodyOnFileSystem(Cache $cache): Cache
     {
         if (!$cache->getBody()) {
             return $cache;
@@ -42,7 +43,7 @@ class ContentStorage
         );
     }
 
-    public function readBodyOnFileSystem(Cache $cache)
+    public function readBodyOnFileSystem(Cache $cache): ?Cache
     {
         if (!$cache->getBody()) {
             return $cache;
@@ -64,23 +65,21 @@ class ContentStorage
         );
     }
 
-    public function removeFromFileSystem(array $ids)
+    public function removeFromFileSystem(array $ids): void
     {
         foreach ($ids as $id) {
             try {
                 $this->fs->delete($this->directory . $id);
             } catch (\Exception $e) {
-                //
             }
         }
     }
 
-    public function flushFileSystem()
+    public function flushFileSystem(): void
     {
         try {
             $this->fs->deleteDir($this->directory);
         } catch (\Exception $e) {
-            //
         }
     }
 }

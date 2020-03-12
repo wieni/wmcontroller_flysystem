@@ -1,16 +1,23 @@
-# FlySystem storage for WmController
+wmcontroller_flysystem
+======================
 
-This is a FlySystem storage for [wieni/wmcontroller](https://github.com/wieni/wmcontroller)
+[![Latest Stable Version](https://poser.pugx.org/wieni/wmcontroller_flysystem/v/stable)](https://packagist.org/packages/wieni/wmcontroller_flysystem)
+[![Total Downloads](https://poser.pugx.org/wieni/wmcontroller_flysystem/downloads)](https://packagist.org/packages/wieni/wmcontroller_flysystem)
+[![License](https://poser.pugx.org/wieni/wmcontroller_flysystem/license)](https://packagist.org/packages/wieni/wmcontroller_flysystem)
+
+> A [Flysystem](https://flysystem.thephpleague.com) storage for [wieni/wmcontroller](https://github.com/wieni/wmcontroller)
 
 ## Installation
 
+This package requires PHP 7.1 and Drupal 8 or higher. It can be
+installed using Composer:
+
 ```bash
-composer require wieni/wmcontroller_flysystem
-drush en wmcontroller_flysystem
+ composer require wieni/wmcontroller_flysystem
 ```
 
+To enable this cache invalidator, change the following container parameters:
 ```yaml
-// services.yml
 parameters:
     # Backend storage responsible for keeping track of tags and cache entries
     wmcontroller.cache.flysystem.backend.storage: wmcontroller.cache.storage.mysql
@@ -18,6 +25,8 @@ parameters:
     wmcontroller.cache.flysystem.scheme: wmcontrollerscheme
     wmcontroller.cache.flysystem.directory: wmcontroller
 ```
+
+Make sure to also set the flysystem scheme in `settings.php`.
 
 ```php
 // settings.php
@@ -58,3 +67,16 @@ $settings['flysystem'] = [
     ],
 ];
 ```
+
+## Changelog
+All notable changes to this project will be documented in the
+[CHANGELOG](CHANGELOG.md) file.
+
+## Security
+If you discover any security-related issues, please email
+[security@wieni.be](mailto:security@wieni.be) instead of using the issue
+tracker.
+
+## License
+Distributed under the MIT License. See the [LICENSE](LICENSE) file
+for more information.

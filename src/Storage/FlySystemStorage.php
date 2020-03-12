@@ -8,9 +8,9 @@ use Drupal\wmcontroller\Service\Cache\Storage\StorageInterface;
 
 class FlySystemStorage implements StorageInterface
 {
-    /** @var \Drupal\wmcontroller\Service\Cache\Storage\StorageInterface */
+    /** @var StorageInterface */
     protected $storage;
-    /** @var \Drupal\wmcontroller_flysystem\Storage\ContentStorage */
+    /** @var ContentStorage */
     protected $contentStorage;
 
     public function __construct(
