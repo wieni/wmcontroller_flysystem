@@ -19,6 +19,8 @@ installed using Composer:
 To enable this cache invalidator, change the following container parameters:
 ```yaml
 parameters:
+    wmcontroller.cache.storage: wmcontroller.cache.storage.flysystem
+
     # Backend storage responsible for keeping track of tags and cache entries
     wmcontroller.cache.flysystem.backend.storage: wmcontroller.cache.storage.mysql
 
