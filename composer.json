@@ -1,7 +1,7 @@
 {
     "name": "wieni/wmcontroller_flysystem",
     "type": "drupal-module",
-    "description": "A Flysystem storage for wieni/wmcontroller",
+    "description": "A Flysystem cache storage for wieni/wmcontroller",
     "license": "MIT",
     "authors": [
         {

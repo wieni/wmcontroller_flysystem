@@ -5,7 +5,7 @@ wmcontroller_flysystem
 [![Total Downloads](https://poser.pugx.org/wieni/wmcontroller_flysystem/downloads)](https://packagist.org/packages/wieni/wmcontroller_flysystem)
 [![License](https://poser.pugx.org/wieni/wmcontroller_flysystem/license)](https://packagist.org/packages/wieni/wmcontroller_flysystem)
 
-> A [Flysystem](https://flysystem.thephpleague.com) storage for [wieni/wmcontroller](https://github.com/wieni/wmcontroller)
+> A [Flysystem](https://flysystem.thephpleague.com) cache storage for [wieni/wmcontroller](https://github.com/wieni/wmcontroller)
 
 ## Installation
 
@@ -16,7 +16,7 @@ installed using Composer:
  composer require wieni/wmcontroller_flysystem
 ```
 
-To enable this cache invalidator, change the following container parameters:
+To enable this cache storage, change the following container parameters:
 ```yaml
 parameters:
     wmcontroller.cache.storage: wmcontroller.cache.storage.flysystem
