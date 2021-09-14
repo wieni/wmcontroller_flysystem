@@ -13,7 +13,7 @@
         "php": "^8.0",
         "drupal/core": "^9.1",
         "drupal/flysystem": "^2.0",
-        "wieni/wmcontroller": "^1.0"
+        "wieni/wmcontroller": "dev-feature/split#3875b57 as 0.10.2"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.0",
